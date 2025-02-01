@@ -146,7 +146,7 @@ def test_video_on_model(video_path, model_path):
 
 if __name__ == "__main__":
     # Définir les chemins
-    video_path = r"C:\Users\hadyk\Desktop\PFE\PFE_parking\video_voirie\test4.mp4"  # Chemin de la vidéo
+    video_path = r"video_voirie\test4.mp4"  # Chemin de la vidéo
     model_path = "yolo8_nano_selfdataset_5E8/weights/best.pt"  # Chemin du modèle YOLO
 
     test_video_on_model(video_path, model_path)
