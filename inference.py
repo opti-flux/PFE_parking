@@ -143,7 +143,7 @@ def test_video_on_model(video_path, model_path):
 
 if __name__ == "__main__":
     # Définition des chemins d'entrée
-    video_path = r"video_voirie/test4.mp4"
+    video_path = r"video.mp4"
     model_path = "yolo11nano/weights/best.pt"
 
     # Lancement du traitement de la vidéo
