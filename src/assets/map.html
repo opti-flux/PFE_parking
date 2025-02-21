@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 100vh; width: 100%; }
+        body { margin: 0; padding: 0; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        // Récupérer les paramètres depuis l'URL
+        const params = new URLSearchParams(window.location.search);
+        const zonesParam = params.get('zones');
+        const singleZone = params.get('lat') && params.get('lng'); // Détecte une seule zone
+
+        let zones = [];
+
+        if (zonesParam) {
+            zones = JSON.parse(decodeURIComponent(zonesParam));
+        } else if (singleZone) {
+            zones = [{
+                name: decodeURIComponent(params.get('name')),
+                coordinates: {
+                    latitude: parseFloat(params.get('lat')),
+                    longitude: parseFloat(params.get('lng'))
+                }
+            }];
+        }
+
+        // Initialiser la carte
+        var map = L.map('map').setView([48.8584, 2.2945], 13); // Coordonnées par défaut
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        let markers = [];
+
+        // Ajouter les marqueurs pour les zones
+        zones.forEach(zone => {
+            let marker = L.marker([zone.coordinates.latitude, zone.coordinates.longitude])
+                .addTo(map)
+                .bindPopup(`<b>${zone.name}</b>`)
+                .openPopup();
+            markers.push(marker);
+        });
+
+        // 🔥 Ajouter ici le recalcul de la taille et le recentrage
+        setTimeout(() => {
+            map.invalidateSize(); // Force Leaflet à recalculer la taille du conteneur
+        }, 100);
+
+        // 🔥 Si c'est une seule zone, centrer directement
+        if (singleZone) {
+            map.setView([zones[0].coordinates.latitude, zones[0].coordinates.longitude], 18); // Zoom sur la zone
+        } else {
+            // Ajuster les limites pour inclure tous les marqueurs
+            var group = new L.featureGroup(
+                markers
+            );
+            map.fitBounds(group.getBounds());
+        }
+    </script>
+</body>
+</html>
