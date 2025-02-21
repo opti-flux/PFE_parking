@@ -1,0 +1,50 @@
+{
+  "globalStats": {
+    "availableSpots": 45,
+    "chargingStations": 3
+  },
+  "zones": [
+    {
+      "id": 1,
+      "name": "Zone A",
+      "available": 15,
+      "total": 20,
+      "covered": true,
+      "chargingStations": 2,
+      "averageTime": "5 min",
+      "pricePerHour": 2.0,
+      "coordinates": {
+        "latitude": 48.858844,
+        "longitude": 2.294351
+      }
+    },
+    {
+      "id": 2,
+      "name": "Zone B",
+      "available": 20,
+      "total": 25,
+      "covered": false,
+      "chargingStations": 1,
+      "averageTime": "7 min",
+      "pricePerHour": 1.5,
+      "coordinates": {
+        "latitude": 48.857844,
+        "longitude": 2.293351
+      }
+    },
+    {
+      "id": 3,
+      "name": "Zone C",
+      "available": 10,
+      "total": 15,
+      "covered": true,
+      "chargingStations": 0,
+      "averageTime": "4 min",
+      "pricePerHour": 2.5,
+      "coordinates": {
+        "latitude": 48.859844,
+        "longitude": 2.295351
+      }
+    }
+  ]
+}

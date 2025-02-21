@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+/* Styles globaux */
+.page {
+    background-color: #f5f7fa;
+}
+.page {
+    flex: 1;
+    height: 100%;
+    background-color: #f5f7fa;
+}
+
+.gradient-header {
+    background: linear-gradient(135deg, #0a84ff 0%, #0066cc 100%);
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 16;
+    margin: 8 16;
+    elevation: 4;
+    animation-name: fadeIn;
+    animation-duration: 0.3;
+}
+
+.card:active {
+    animation-name: pulse;
+    animation-duration: 0.2;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-width: 1;
+    border-color: #e2e8f0;
+    border-radius: 20;
+}
+
+.search-container {
+    margin: 16;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12;
+    padding: 4;
+}
+
+.zone-status-available {
+    background: linear-gradient(135deg, #34c759 0%, #32d74b 100%);
+    color: white;
+    font-weight: bold;
+    max-width: 150px;
+    border-radius: 8px;
+    padding: 8px 12px;
+    text-align: center; 
+}
+
+.zone-status-limited {
+    background: linear-gradient(135deg, #ff453a 0%, #ff3b30 100%);
+    color: white;
+    font-weight: bold;
+    border-radius: 8;
+    padding: 8 12;
+}
+
+.webview-container {
+    border-radius: 16px; /* Ajout d'arrondis */
+    overflow: hidden; /* Empêche le débordement */
+    height: 300px; /* Hauteur fixe */
+    width: 100%; /* Largeur adaptative */
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.border-t {
+    border-top-width: 1px;
+    border-top-color: #e5e7eb;
+}
+
+.gridLayout {
+    display: flex;
+    justify-content: space-between; /* Espacement équidistant entre les éléments */
+    align-items: center; /* Alignement vertical */
+    padding: 10px 16px; /* Ajout d'un peu d'espace autour */
+}
+
+.stackLayout {
+    display: flex;
+    flex-direction: column; /* Pour aligner l'icône et le texte verticalement */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.stackLayout label {
+    margin-top: 4px; /* Espace entre l'icône et le texte */
+    font-size: 12px;
+    color: #6b7280; /* Gris doux */
+}
+
