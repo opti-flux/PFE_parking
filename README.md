@@ -38,6 +38,37 @@ Les logs générés par **log\_config.py** permettent de suivre les performances
 
 Le dossier **transformation\_annotation/** contient les scripts nécessaires à la création et transformation des annotations des images utilisées pour l'entraînement du modèle.
 
+
+
+## 📁 parking-booking-main
+```
+📂 > src
+│--📂 > assets
+     -- map.html
+     -- parkingData.json
+│--📂> components
+     -- HomeScreen.tsx
+     --  MainStack.tsx
+     --  MapScreen.tsx
+     --  ZoneDetailsScreen.tsx
+    app.css
+    app.ts
+    NavigationParamList.ts
+```
+
+## 🚀 Installation
+
+1. **Cloner le dépôt**
+   ```bash
+   git clone https://github.com/ton_repo/OptiFlux.git
+   \parking-booking-main> cd .\park-booking-main\
+   ```
+2. **Installer les dépendances**
+   ```bash
+   npm install
+   npm install -g expo-cli
+   npm run preview
+
 ## 👥 Équipe
 
 Projet développé par **Opti'Flux**, un groupe d'ingénieurs passionnés par l'IA et la vision par ordinateur.
